@@ -1,7 +1,25 @@
 function begin() {
-    $(".info").hide();
-    window.setTimeout(function(){ $("#other").show(); }, 1000)
+    setTimeout(function () {
+    flicker(3, function () {
+            $("#other").fadeIn("slow");
+        })
+    }, 1000)
+}
+
+function flicker(count, callback, current) {
+    // Recycled code, fuck yeah!
+    // http://jsfiddle.net/arunpjohny/upyq9/
+    current = current || 0;
     
+    $(".info")[current % 2 == 0 ? 'hide' : 'show']();
+    
+    setTimeout(function(){
+        if (count * 2 <= current) {
+            callback();
+            return;
+        }
+        flicker(count, callback, current + 1)
+    }, 500);
 }
 
 function randomQuestion() {
