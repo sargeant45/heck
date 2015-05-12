@@ -1,11 +1,11 @@
 function begin() {
     $(".info").hide();
     $("#title").hide();
-    $("body").css("backgroundColor", "black");
+    $("body").animate({backgroundColor: "black"}, "slow");
     setTimeout(function () {
         flicker(2, function () {
                 $("#other").fadeIn("slow");
-                setTimeout(function () {$('body').animate({ backgroundColor: "white" }, 'slow');}, 1000);
+                setTimeout(function () {$('body').animate({ backgroundColor: "white" }, 'slow');}, 250);
         })
     }, 3000);
 }
@@ -23,7 +23,7 @@ function flicker(count, callback, current) {
             return;
         }
         flicker(count, callback, current + 1)
-    }, 250);
+    }, 100);
 }
 
 function randomQuestion() {
