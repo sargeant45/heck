@@ -1,9 +1,11 @@
 function begin() {
+    $("body").css("backgroundColor", "black");
     setTimeout(function () {
-    flicker(3, function () {
-            $("#other").fadeIn("slow");
+        flicker(3, function () {
+                $("#other").fadeIn("slow");
         })
-    }, 1000)
+    }, 1000);
+    $('body').animate({ backgroundColor: "white" }, 'slow');
 }
 
 function flicker(count, callback, current) {
