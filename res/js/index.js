@@ -1,11 +1,12 @@
 function begin() {
     $(".info").hide();
+    $("#title").hide();
     $("body").css("backgroundColor", "black");
     setTimeout(function () {
         flicker(2, function () {
                 $("#other").fadeIn("slow");
+                setTimeout(function () {$('body').animate({ backgroundColor: "white" }, 'slow');}, 1000);
         })
-        setTimeout(function () {$('body').animate({ backgroundColor: "white" }, 'slow');}, 1000);
     }, 3000);
 }
 
