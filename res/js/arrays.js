@@ -1,0 +1,3 @@
+var yesno = ["Can penguins fly?", "Does a pentagram have 5 sides?", "Are blueberries blue?", "If one meatbag is the weight of 2 bags of meat, then what is a lie?", "Does a square have 4 sides?", "On a scale of one to ten, what is real?", "Does 六角星 mean pentagram?", "Is Lord Chin-Chin the best Lord Chin-Chin?", "Is Mario a communist?", "On a scale of one to ten, are you a dick?", "Did aliens build the pyramids?", "On a scale of one to ten, do you hail Satan 666 Bush did 9/11?", "If you have 2 cookies, the Illuminati diamond, a knife, and a pentagram, are sloths badass?"];
+// Answers, true = yes, false = no
+var yesnocorrect = [true, false, false, true, false, true, false, true, false, true, false, true, true];

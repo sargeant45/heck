@@ -1,0 +1,29 @@
+body {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+#title {
+    text-align: center;
+}
+.body {
+    font-size: 16pt;
+}
+.bigtitle {
+    font-size: 124pt;
+    color: #B85F08;
+}
+.bigtitle:hover {
+    color: #286090;
+}
+.orng {
+    background-color: #B85F08;
+}
+
+/* Font Classes */
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+}
