@@ -6,7 +6,7 @@ function begin() {
                 $("#other").fadeIn("slow");
         })
         $('body').animate({ backgroundColor: "white" }, 'slow');
-    }, 1000);
+    }, 3000);
 }
 
 function flicker(count, callback, current) {
