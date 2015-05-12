@@ -5,8 +5,8 @@ function begin() {
         flicker(2, function () {
                 $("#other").fadeIn("slow");
         })
+        $('body').animate({ backgroundColor: "white" }, 'slow');
     }, 1000);
-    setTimeout(function() {$('body').animate({ backgroundColor: "white" }, 'slow')}, 1000);
 }
 
 function flicker(count, callback, current) {
@@ -22,7 +22,7 @@ function flicker(count, callback, current) {
             return;
         }
         flicker(count, callback, current + 1)
-    }, 500);
+    }, 250);
 }
 
 function randomQuestion() {
