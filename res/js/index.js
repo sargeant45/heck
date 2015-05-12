@@ -5,8 +5,8 @@ function begin() {
         flicker(2, function () {
                 $("#other").fadeIn("slow");
         })
-        $('body').animate({ backgroundColor: "white" }, 'slow');
     }, 3000);
+    setTimeout(function () {$('body').animate({ backgroundColor: "white" }, 'slow');}, 1000);
 }
 
 function flicker(count, callback, current) {
