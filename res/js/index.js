@@ -1,6 +1,8 @@
 function begin() {
+    document.getElementById("slam").load();
     $(".info").hide();
     $("#title").hide();
+    document.getElementById("slam").play();
     $("body").animate({backgroundColor: "black"}, "slow");
     setTimeout(function () {
         flicker(2, function () {
