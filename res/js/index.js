@@ -1,11 +1,12 @@
 function begin() {
+    $(".info").hide();
     $("body").css("backgroundColor", "black");
     setTimeout(function () {
-        flicker(3, function () {
+        flicker(2, function () {
                 $("#other").fadeIn("slow");
         })
     }, 1000);
-    $('body').animate({ backgroundColor: "white" }, 'slow');
+    setTimeout(function() {$('body').animate({ backgroundColor: "white" }, 'slow')}, 1000);
 }
 
 function flicker(count, callback, current) {
@@ -13,7 +14,7 @@ function flicker(count, callback, current) {
     // http://jsfiddle.net/arunpjohny/upyq9/
     current = current || 0;
     
-    $(".info")[current % 2 == 0 ? 'hide' : 'show']();
+    $("#title")[current % 2 == 0 ? 'hide' : 'show']();
     
     setTimeout(function(){
         if (count * 2 <= current) {
