@@ -64,7 +64,7 @@ function randomQuestion() {
     var person = ["Satan's skeletal army", "Weeaboo Jones", "The developer", "Your mom", "Satan", "Satan's gatekeeper", "A demon", "Your bratty little sister", "Lord Chin-Chin", "The one black kid from Little Einsteins", "Spoderman", "A wither skeleton", "Walter White", "Linus Torvalds", "Brandi Maxxx", "A confederate supporter", "An honorable businessman", "The kid from Limbo", "Foster the People", "One Direction", "Justin Bieber", "Dolan", "Satan's army of gigantic 8-legged pigs", "Filthy Frank", "Smosh", "Shane Dawson", "Robin", "Mickey Mouse", "A dead whale", "A dumbass hipster", "A pseudo-intellectual white kid", "Iggy Azaelea", "Kanye West"];
     var action = ["has you!", "wants to pop a niner in your face with a deuce deuce!", "will drag you into the depths of Heck, once and for all!", "is following you, in an attempt to kill you with a very certain set of skills.", "will hack into your mental system and use your body to take over Heck and then the world!", "is on the hunt for a you, with three rules: \"Get paid, get laid, and execute the target via Gatorade\".", "will eat you!", "has you on a hit list!"];
     var actionlength = action.length - 1;
-    var personlength = person.length - 1;
+    var personlength = person.length - 1; // Plz work
     var exclamationslength = exclamations.length - 1;
     // All questions correlate with an answer because they are at the same index in their arrays, so the randomly picked number will access both of them
     var question = "";
