@@ -76,7 +76,7 @@ function randomQuestion() {
                 alert(subtext);
                 var questionIndex = chance.integer({min: 0, max: yesno.length - 1});
                 question = "Your question is:\n" + yesno[questionIndex] + "\nPlease type 'y' if yes, and type 'n' if no.";
-                var useranswer = prompt(question, "y or n").toLowerCase();
+                var useranswer = prompt(question, "y or n");
                 if(useranswer === "" || useranswer === "y or n")
                 {
                     incorrect();
@@ -120,8 +120,9 @@ function randomQuestion() {
                         break;
                     case 2:
                         question = "Your question is:\n" + wordanswer[questionIndex] + "\nPlease type '1' if the answer is '" + wordanswercorrect[questionIndex] + "'. Please type '2' if the answer is '" + wordanswerincorrect[questionIndex] + "'.";
+                        break;
                 }
-                var useranswer = prompt(question, "answer").toLowerCase();
+                var useranswer = prompt(question, "answer");
                 if(useranswer === "" || useranswer === "answer")
                 {
                     incorrect();
@@ -130,11 +131,25 @@ function randomQuestion() {
                 {
                     switch(useranswer)
                     {
-                      case wordanswercorrect[questionIndex]:
-                        correct();
+                      case "1":
+                        if(oneortwo === 1)
+                        {
+                            incorrect();
+                        }
+                        else
+                        {
+                            correct();
+                        }
                         break;
-                      case wordanswerincorrect[questionIndex]:
-                        incorrect();
+                      case "2":
+                        if(oneortwo === 1)
+                        {
+                            correct();
+                        }
+                        else
+                        {
+                            incorrect();
+                        }
                         break;
                       default:
                         incorrect();
