@@ -75,27 +75,33 @@ function randomQuestion() {
                 var questionIndex = chance.integer({min: 0, max: yesno.length - 1});
                 question = "Your question is:\n" + yesno[questionIndex] + "\nPlease type 'y' if yes, and type 'n' if no.";
                 var useranswer = prompt(question, "y or n").toLowerCase();
-                var useranswerbool;
-                switch(useranswer)
+                if(useranswer === null || useranswer === "y or n")
                 {
-                  case "y":
-                    useranswerbool = true;
-                    break;
-                  case "n":
-                    useranswerbool = false;
-                    break;
-                  default:
-                    alert("You broke a rule of Heck.\nSee you later.");
-                    close();
-                    break;
-                }
-                if(useranswerbool === yesnocorrect[questionIndex])
-                {
-                  correct();
+                    incorrect();
                 }
                 else
                 {
-                  incorrect();
+                    var useranswerbool;
+                    switch(useranswer)
+                    {
+                      case "y":
+                        useranswerbool = true;
+                        break;
+                      case "n":
+                        useranswerbool = false;
+                        break;
+                      default:
+                        incorrect();
+                        break;
+                    }
+                    if(useranswerbool === yesnocorrect[questionIndex])
+                    {
+                      correct();
+                    }
+                    else
+                    {
+                      incorrect();
+                    }
                 }
                 break;
             case 2:
