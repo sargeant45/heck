@@ -1,13 +1,15 @@
+var unnamedmusicstuff = new buzz.sound("res/mp3/moosic.mp3");
+// Global, man!
+
 function intro() {
     // Do the scary shit lol
     var scarysounds = new buzz.sound("res/mp3/opener.mp3");
-    var unnamedmusicstuff = new buzz.sound("res/mp3/moosic.mp3");
-    music(true, unnamedmusicstuff);
+    music(true, unnamedmusicstuff, false);
     $(".ascensor").slideUp(1000, function(){setTimeout(function(){scarysounds.play();}, 500);});
     $(".ascensor").fadeOut(1000);
     $("body").animate({backgroundColor: "black"}, 1000);
     // Rainbows!!
-    scarysounds.bind("ended", function(){$('body').animate({ color: "white" }, 'slow');$("#other").fadeIn("slow");setTimeout(function() {music(false, unnamedmusicstuff); /* Rainbows are fucking awesome */ rainbows();}, 2000); setTimeout(function(){randomQuestion();}, 15179);});
+    scarysounds.bind("ended", function(){$('body').animate({ color: "white" }, 'slow');$("#other").fadeIn("slow");setTimeout(function() {music(false, unnamedmusicstuff, false); /* Rainbows are fucking awesome */ rainbows();}, 2000); setTimeout(function(){randomQuestion();}, 15179);});
 }
 function rainbows() {
     // Rainbow stuff
@@ -29,10 +31,14 @@ function rainbows() {
     setTimeout(function(){clearInterval(colorzyayz); $("#heck-h").css("color", "#B85F08"); $("#heck-e").css("color", "#B85F08"); $("#heck-c").css("color", "#B85F08"); $("#heck-k").css("color", "#B85F08"); $("body").css("backgroundColor", "white"); $("body").css("color", "black"); $("#header").css({"-webkit-text-stroke" : "0px black", "text-shadow" : "0px 0px #ff0000;"});}, 12179);
 }
 
-function music(load, musics) {
+function music(load, musics, kill) {
   if(load === true)
   {
     musics.load();
+  }
+  else if (kill === true)
+  {
+    musics.stop();
   }
   else
   {
@@ -174,16 +180,17 @@ function correct() {
         sound = new buzz.sound("http://picosong.com/cdn/de00408ed078a588da7a5946a21940f3.mp3");
         break;
   }
-  music(false, sound);
+  music(false, sound, false);
   var num = parseInt(document.getElementById("turncount").innerHTML, 10);
-  var newnum = num++;
+  var newnum = num + 1;
   document.getElementById("turncount").innerHTML = newnum;
   
   setTimeout(function(){randomQuestion();}, 2000);
 }
 
 function incorrect() {
-  // code some game over stuff here, but for later.
-  // for now, just close();
-  close();
+  music(false, unnamedmusicstuff, true);
+  var gameover = ["You 'dun fucked up!", "You are now trapped in Heck for all eternity!", "Enjoy your stay, scr00b.", "Game over, man! Game. Over!"];
+  window.alert(gameover[chance.integer({min: 0, max: 3})] + "\nYour final score was: " + document.getElementById("turncount").innerHTML);
+  window.location.reload();
 }
