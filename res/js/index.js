@@ -7,7 +7,7 @@ function intro() {
     $(".ascensor").fadeOut(1000);
     $("body").animate({backgroundColor: "black"}, 1000);
     // Rainbows!!
-    scarysounds.bind("ended", function(){$('body').animate({ color: "white" }, 'slow');$("#other").fadeIn("slow");setTimeout(function() {music(false, unnamedmusicstuff); /* Rainbows are fucking awesome */ rainbows();}, 2000); setTimeout(function(){game();}, 15179);});
+    scarysounds.bind("ended", function(){$('body').animate({ color: "white" }, 'slow');$("#other").fadeIn("slow");setTimeout(function() {music(false, unnamedmusicstuff); /* Rainbows are fucking awesome */ rainbows();}, 2000); setTimeout(function(){randomQuestion();}, 15179);});
 }
 function rainbows() {
     // Rainbow stuff
@@ -25,10 +25,6 @@ function rainbows() {
         $("body").css("backgroundColor", chance.color({format: 'hex'}));
     }, 250);
     setTimeout(function(){clearInterval(colorzyayz); $("#heck-h").css("color", "#B85F08"); $("#heck-e").css("color", "#B85F08"); $("#heck-c").css("color", "#B85F08"); $("#heck-k").css("color", "#B85F08"); $("body").css("backgroundColor", "white"); $("body").css("color", "black"); $("#header").css({"-webkit-text-stroke" : "0px black", "text-shadow" : "0px 0px #ff0000;"});}, 12179);
-}
-
-function game() {
-    randomQuestion();
 }
 
 function music(load, musics) {
@@ -112,9 +108,26 @@ function randomQuestion() {
 }
 
 function correct() {
-  
+  var sound;
+  switch(chance.integer({min: 1, max: 3}))
+  {
+      case 1:
+        sound = new buzz.sound("http://picosong.com/cdn/0d1d307cd0fd832c7c8f58b660abe102.mp3");
+        break;
+      case 2:
+        sound = new buzz.sound("http://picosong.com/cdn/e84e725ca9a8eeb332351bd6d5177b3b.mp3");
+        break;
+      case 3:
+        sound = new buzz.sound("http://picosong.com/cdn/de00408ed078a588da7a5946a21940f3.mp3");
+        break;
+  }
+  music(false, sound);
+  document.getElementById("turncount").innerHTML = parseInt(document.getElementById("turncount").innerHTML, 10)++;
+  randomQuestion();
 }
 
 function incorrect() {
   // code some game over stuff here, but for later.
+  // for now, just exit();
+  exit();
 }
