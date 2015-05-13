@@ -86,7 +86,7 @@ function randomQuestion() {
             case 1:
                 // Yes or no.
                 // Format subtext.
-                subtext = exclamations[chance.integer({min: 0, max: exclamationslength})] + " " + person[chance.integer({min: 0, max: personlength})] + " " + action[chance.integer({min: 0, max: actionslength})] + " Answer a question if you want any chance of surviving!";
+                subtext = exclamations[chance.integer({min: 0, max: exclamationslength})] + " " + person[chance.integer({min: 0, max: personlength})] + " " + action[chance.integer({min: 0, max: actionlength})] + " Answer a question if you want any chance of surviving!";
                 alert(subtext);
                 var questionIndex = chance.integer({min: 0, max: yesno.length - 1});
                 question = "Your question is:\n" + yesno[questionIndex] + "\nPlease type 'y' if yes, and type 'n' if no.";
