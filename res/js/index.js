@@ -56,7 +56,7 @@ function randomQuestion() {
     var subtext = "";
     var exclamations = ["Oh no!", "Leaping lizards!", "Holy balls, Batman!", "Holy Satan's buttcrack!", "Oh my demons!", "Holy astronomy, Batman!", "Holy schizophrenia patient!", "Oh noes!", "Well, slap my tits and call me Shirley!", "Oh my god! It's so intense!", "Incarcerated dumptrucks, Batman!", "Great balls of fire!", "This situation is so intense, I'd put it on Shark Tank!", "No way!", "Well piss on my dog and call me Batman, Batman!", "Holy incarceration, Batman!", "Oh my god, Robin!", "I can't even!", "I have lost the ability to even!", "Doz nuts tho, Batman!", "We're in a pickle!", "This situation looks worse than yo momma!"];
     var person = ["Satan's skeletal army", "Weeaboo Jones", "The developer", "Your mom", "Satan", "Satan's gatekeeper", "A demon", "Your bratty little sister", "Lord Chin-Chin", "The one black kid from Little Einsteins", "Spoderman", "A wither skeleton", "Walter White", "Linus Torvalds", "Brandi Maxxx", "A confederate supporter", "An honorable businessman", "The kid from Limbo", "Foster the People", "One Direction", "Justin Bieber", "Dolan", "Satan's army of gigantic 8-legged pigs", "Filthy Frank", "Smosh", "Shane Dawson", "Robin", "Mickey Mouse", "A dead whale", "A dumbass hipster", "A pseudo-intellectual white kid", "Iggy Azaelea", "Kanye West"];
-    var action = ["has you!", "wants to pop a niner in your face with a deuce deuce!", "will drag you into the depths of Heck, once and for all!", "is following you, in an attempt to kill you with a very certain set of skills.", "will hack into your mental system and use your body to take over Heck and then the world!", "is on the hunt for a you, with three rules: \"Get paid, get laid, and execute the target via Gatorade\".", "will eat you!"];
+    var action = ["has you!", "wants to pop a niner in your face with a deuce deuce!", "will drag you into the depths of Heck, once and for all!", "is following you, in an attempt to kill you with a very certain set of skills.", "will hack into your mental system and use your body to take over Heck and then the world!", "is on the hunt for a you, with three rules: \"Get paid, get laid, and execute the target via Gatorade\".", "will eat you!", "has you on a hit list!"];
     
     // All questions correlate with an answer because they are at the same index in their arrays, so the randomly picked number will access both of them
     var question = "";
@@ -78,7 +78,7 @@ function randomQuestion() {
             case 1:
                 // Yes or no.
                 // Format subtext.
-                subtext = exclamations[chance.integer({min: 0, max: exclamations.length - 1})] + " " + person[chance.integer({min: 0, max: person.length - 1})] + " " + action[chance.integer({min: 0, max: action.length - 1})] + " Answer a question if you want any chance of surviving!";
+                subtext = exclamations[chance.integer({min: 0, max: exclamations.length})] + " " + person[chance.integer({min: 0, max: person.length})] + " " + action[chance.integer({min: 0, max: action.length})] + " Answer a question if you want any chance of surviving!";
                 alert(subtext);
                 var questionIndex = chance.integer({min: 0, max: yesno.length - 1});
                 question = "Your question is:\n" + yesno[questionIndex] + "\nPlease type 'y' if yes, and type 'n' if no.";
