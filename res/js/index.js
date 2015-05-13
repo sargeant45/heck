@@ -123,7 +123,7 @@ function randomQuestion() {
             case 2:
                 // Word answer.
                 // Format subtext.
-                subtext = exclamations[chance.integer({min: 0, max: exclamations.length})] + " " + person[chance.integer({min: 0, max: person.length})] + " " + action[chance.integer({min: 0, max: exclamations.length})] + " Answer a question if you want any chance of surviving!";
+                subtext = exclamations[chance.integer({min: 0, max: exclamationslength})] + " " + person[chance.integer({min: 0, max: personlength})] + " " + action[chance.integer({min: 0, max: actionlength})] + " Answer a question if you want any chance of surviving!";
                 alert(subtext);
                 var questionIndex = chance.integer({min: 0, max: wordanswer.length - 1});
                 var oneortwo = chance.integer({min: 1, max: 2});
