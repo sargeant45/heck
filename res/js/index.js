@@ -1,3 +1,9 @@
+/*
+JavaScript code for Heck: Know Your Enemies
+(c) Ethan Arterberry 2015
+*/
+
+
 var unnamedmusicstuff = new buzz.sound("res/mp3/moosic.mp3");
 // Global, man!
 
