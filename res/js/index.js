@@ -1,6 +1,8 @@
 function begin() {
     var scarysounds = new buzz.sound("res/mp3/opener.mp3");
-    scarysounds.bind("ended", function(){$('body').animate({ color: "white" }, 'slow');$("#other").fadeIn("slow");});
+    var unnamedmusicstuff = new buzz.sound("res/mp3/moosic.mp3");
+    unnamedmusicstuff.loop = true;
+    scarysounds.bind("ended", function(){$('body').animate({ color: "white" }, 'slow');$("#other").fadeIn("slow");setTimeout(function() {unnamedmusicstuff.play();}, 2000);});
     $(".ascensor").slideUp(1000, function(){setTimeout(function(){scarysounds.play();}, 500)});
     $(".ascensor").fadeOut(1000);
     $("body").animate({backgroundColor: "black"}, 1000);
