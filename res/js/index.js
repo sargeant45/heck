@@ -12,9 +12,11 @@ function intro() {
 function rainbows() {
     // Rainbow stuff
     // Shadow
+    $("body").css("font-family", "Comic Sans MS, 'Comic Sans', 'Comic Sans MS', Comic Sans, handwriting");
     $("#header").css({
         "-webkit-text-stroke" : "5px black",
-        "text-shadow" : "5px 5px #ff0000"
+        "text-shadow" : "5px 5px #ff0000",
+        "font-family" : "Comic Sans MS, 'Comic Sans', 'Comic Sans MS', Comic Sans, handwriting"
     });
     // Text Colors
     var colorzyayz = setInterval(function(){
@@ -24,7 +26,7 @@ function rainbows() {
         $("#heck-k").css("color", chance.color({format: 'hex'}));
         $("body").css("backgroundColor", chance.color({format: 'hex'}));
     }, 250);
-    setTimeout(function(){$("body").css("font-family", "Comic Sans MS, 'Comic Sans', 'Comic Sans MS', Comic Sans, handwriting"); clearInterval(colorzyayz); $("#heck-h").css("color", "#B85F08"); $("#heck-e").css("color", "#B85F08"); $("#heck-c").css("color", "#B85F08"); $("#heck-k").css("color", "#B85F08"); $("body").css("backgroundColor", "white"); $("body").css("color", "black"); $("#header").css({"-webkit-text-stroke" : "0px black", "text-shadow" : "0px 0px #ff0000;"});}, 12179);
+    setTimeout(function(){clearInterval(colorzyayz); $("#heck-h").css("color", "#B85F08"); $("#heck-e").css("color", "#B85F08"); $("#heck-c").css("color", "#B85F08"); $("#heck-k").css("color", "#B85F08"); $("body").css("backgroundColor", "white"); $("body").css("color", "black"); $("#header").css({"-webkit-text-stroke" : "0px black", "text-shadow" : "0px 0px #ff0000;"});}, 12179);
 }
 
 function music(load, musics) {
@@ -130,7 +132,7 @@ function correct() {
   music(false, sound);
   var num = parseInt(document.getElementById("turncount").innerHTML, 10);
   var newnum = num++;
-  document.getElementById("turncount").innerHTML = Number.toString(newnum);
+  document.getElementById("turncount").innerHTML = newnum;
   randomQuestion();
 }
 
